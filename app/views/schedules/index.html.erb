@@ -1,0 +1,44 @@
+<div class=index_top>
+  <h2 class=index_schedule>予定一覧</h2>
+  <p class=add_data><%= link_to "新規追加", :new_schedule %></p>
+</div>
+  
+<% if flash[:notice] %>
+  <p><%= flash[:notice] %></p>
+<% end %>
+  
+<table class=index_table>
+  <thead>
+    <tr>
+      <th>id</th><th>タイトル</th><th>開始日</th><th>終了日</th>
+      <th>終日</th><th>更新日時</th>
+    </tr>
+  </thead>
+    
+  <tbody class=index_body>
+  <% @schedules.each do |schedule| %>
+    <tr>
+      <td><%= schedule.id %></td>
+      <td><%= schedule.title %></td>        
+      <td><%= schedule.start_time %></td>
+      <td><%= schedule.end_time %></td>
+      <td><% if schedule.all_day  %>
+            ○
+            <% end %>
+      </td>
+      <td><%= schedule.updated_at.to_s(:datetime_jp) %></td>
+      <td><%= link_to "詳細" , schedule %></td>
+      <td><%= link_to "編集" , [:edit, schedule] %></td>
+      <td><%= button_to "削除" , schedule,  method: :delete ,
+              data:{confirm: "削除しますか？"}  %></td>
+      </tr>
+  <% end %>
+  </tbody>  
+</table>
+  
+<footer>
+  <div class=footer_body>
+    <p class=footer_count>予定合計<%= @schedule_count %>件</p>
+    <p class=date_today>今日の日付 <%= @now %></p>
+  </div>
+</footer>
