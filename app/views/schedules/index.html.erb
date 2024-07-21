@@ -27,8 +27,8 @@
             <% end %>
       </td>
       <td><%= schedule.updated_at.to_s(:datetime_jp) %></td>
-      <td><%= link_to "詳細" , schedule %></td>
-      <td><%= link_to "編集" , [:edit, schedule] %></td>
+      <td><%= button_to "詳細" , schedule, method: :get %></td>
+      <td><%= button_to "編集" , [:edit, schedule] ,method: :get%></td>
       <td><%= button_to "削除" , schedule,  method: :delete ,
               data:{confirm: "削除しますか？"}  %></td>
       </tr>
