@@ -1,0 +1,37 @@
+.new_index{
+    margin-left: 30px;
+}
+.new_notice{
+    font-size: 20px;
+    color: red;
+    font-weight: bold;
+    text-align: center;
+}
+.new_table {
+    width: 600px;
+    border: 1px black;
+    margin-left: 10%;
+    text-align: left;
+    background-color: white;
+}
+input[type=text] {
+    margin-left: 20px;
+    width:180%;
+    height:30px
+}
+input[type=date] {
+    width:250px;
+    margin-left: 20px;
+}
+input[type=area] {
+    width:100%
+}
+.asterisk {
+    color: red;
+}
+a{
+    text-decoration: none;
+}
+.action_button{
+    text-align: right;
+}
